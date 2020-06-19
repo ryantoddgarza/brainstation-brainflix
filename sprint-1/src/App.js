@@ -1,8 +1,9 @@
 import React from 'react';
+import Layout from './utils/Layout';
 
 function App() {
   return (
-    <p>React App</p>
+    <Layout />
   );
 }
 

@@ -1,0 +1,28 @@
+.masthead {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint ('from-tablet') {
+    flex-direction: row;
+  }
+
+  &__start {
+    @include breakpoint ('from-tablet') {
+      flex: 1;
+    }
+  }
+
+  &__center {
+    @include breakpoint ('from-tablet') {
+      width: 16.6666%;
+    }
+  }
+
+  &__end {
+    @include breakpoint ('from-tablet') {
+      width: 16.6666%;
+    }
+  }
+
+}

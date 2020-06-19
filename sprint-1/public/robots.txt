@@ -1,3 +1,2 @@
-User-agent: *
-Disallow:
+# this little bot has nothing to hide
 

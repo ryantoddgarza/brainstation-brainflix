@@ -1,0 +1,13 @@
+.home {
+  &__main-content {
+    display: flex;
+  }
+
+  &__primary {
+    flex: 1;
+  }
+
+  &__secondary {
+    flex: 1;
+  }
+}
