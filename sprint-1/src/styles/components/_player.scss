@@ -1,0 +1,106 @@
+.player {
+  &__area-wrapper {
+    background: $black;
+  }
+
+  &__area {
+    position: relative;
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin: 0 auto;
+
+    @include breakpoint ('from-tablet') {
+      width: 700px;
+      height: 400px;
+      padding-bottom: unset;
+    }
+
+    @include breakpoint ('desktop') {
+      width: 944px;
+      height: 540px;
+    }
+  }
+
+  &__video-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    & video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__controls-wrapper {
+  }
+
+  &__controls {
+    display: flex;
+    position: absolute;
+    height: 32px;
+    margin: 0.5rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include breakpoint ('from-tablet') {
+      margin: 1rem;
+    }
+
+    & > * {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 1rem;
+      color: $white;
+      background: rgba(0,0,0,0.6);
+      border-radius: $btn-border-radius-default;
+
+      & *:nth-child(n+2) {
+        margin-left: 16px;
+      }
+    }
+  }
+
+  &__progress {
+    flex-grow: 1;
+    margin: 0 0.5rem;
+
+    @include breakpoint ('from-tablet') {
+      margin: 0 1rem;
+    }
+
+    &--scrubber {
+      flex-grow: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: $black;
+    }
+  }
+
+  &__controls {
+    &--left {
+    }
+
+    &--right {
+    }
+
+    &--time-display {
+      display: none;
+      font-size: 0.75rem;;
+
+      @include breakpoint ('from-tablet') {
+        display: block;
+      }
+    }
+  }
+}
