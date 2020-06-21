@@ -63,10 +63,10 @@
       padding: 1rem;
       color: $white;
       background: rgba(0,0,0,0.6);
-      border-radius: $btn-border-radius-default;
+      border-radius: $default-border-radius;
 
-      & *:nth-child(n+2) {
-        margin-left: 16px;
+      & *:not(:last-child) {
+        margin-right: 16px;
       }
     }
   }

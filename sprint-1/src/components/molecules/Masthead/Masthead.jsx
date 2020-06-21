@@ -1,11 +1,24 @@
 import React from 'react';
+import logo from '../../../static/logo.svg';
+import SearchInput from './molecules/SearchInput';
 
 const Masthead = () => {
   return (
     <div className="masthead">
-      <div className="masthead__start">1</div>
-      <div className="masthead__center">2</div>
-      <div className="masthead__end">3</div>
+      <div className="container masthead__content">
+        <div className="masthead__start">
+        <img src={logo} alt="logo" />
+        </div>
+      <div className="masthead__end">
+        <SearchInput />
+        <div className="masthead__user-panel">
+          <button class="masthead__upload-btn cta">Upload</button>
+          <div className="masthead__user-avatar-wrapper">
+            <img className="masthead__user-avatar" src="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
   )
 }

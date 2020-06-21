@@ -11,11 +11,13 @@ class Player extends Component {
 
   render() {
     return (
-      <div className="player__area">
-        <div className="player__container">
-          <Video src={ this.state.source } />
-          <Controls />
-      </div>
+      <div className="player__area-wrapper">
+        <div className="player__area">
+          <div className="player__container">
+            <Video src={ this.state.source } />
+            <Controls />
+          </div>
+        </div>
       </div>
     )
   }

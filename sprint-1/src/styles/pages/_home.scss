@@ -1,6 +1,11 @@
 .home {
   &__main-content {
     display: flex;
+    flex-direction: column;
+
+    @include breakpoint ('desktop') {
+      flex-direction: row;
+    }
   }
 
   &__primary {
@@ -9,5 +14,15 @@
 
   &__secondary {
     flex: 1;
+
+    &-title {
+      @include type ('h5', 'phone');
+      color: $neutral-500;
+      text-transform: uppercase;
+
+      @include breakpoint ('from-tablet') {
+        @include type ('h5', 'desktop');
+      }
+    }
   }
 }

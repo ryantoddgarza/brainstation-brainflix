@@ -1,28 +1,74 @@
 .masthead {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 
-  @include breakpoint ('from-tablet') {
-    flex-direction: row;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+
+    @include breakpoint ('from-tablet') {
+      flex-direction: row;
+    }
   }
 
   &__start {
+    display: flex;
+    height: 48px;
+
     @include breakpoint ('from-tablet') {
       flex: 1;
     }
   }
 
-  &__center {
-    @include breakpoint ('from-tablet') {
-      width: 16.6666%;
-    }
-  }
-
   &__end {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
     @include breakpoint ('from-tablet') {
-      width: 16.6666%;
+      flex-direction: row;
+      width: 66.6666%;
+    }
+
+    @include breakpoint ('desktop') {
+      width: 41.6666%;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
     }
   }
 
+  &__user-panel {
+    display: flex;
+    margin-bottom: 1rem;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__search-input {
+    width: 100%;
+    height: 48px;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid $neutral-300;
+    border-radius: $default-border-radius;
+  }
+
+  &__upload-btn {
+    flex-grow: 1;
+  }
+
+  &__user-avatar-wrapper {
+    width: 48px;
+    height: 48px;
+    background: $neutral-300;
+    border-radius: 50%;
+  }
+
+  &__user-avatar {
+  }
 }
