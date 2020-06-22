@@ -10,20 +10,127 @@
   }
 
   &__compose {
-    @include row;
+    display: flex;
     margin-bottom: 24px;
+
+    &-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-heading {
+      color: $neutral-500;
+      text-transform: uppercase;
+    }
   }
 
   &__user-avatar-wrapper {
+    width: 54px;
     padding-right: 0;
 
-    & > img {
+    &__user-avatar-wrapper {
       width: 48px;
       height: 48px;
       border-radius: 50%;
       background: $neutral-500;
       object-fit: cover;
       object-position: 0 50%;
+    }
+
+    & > img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: $neutral-300;
+      object-fit: cover;
+      object-position: 0 50%;
+    }
+  }
+}
+
+.comment {
+  display: flex;
+  @include type ('p', 'phone');
+  padding-top: 24px;
+
+  @include breakpoint ('from-tablet') {
+    @include type ('p', 'mobile');
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint ('from-tablet') {
+      justify-content: flex-start;
+    }
+  }
+
+  &__aside {
+    width: 54px;
+
+    & > img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: $neutral-300;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  &__channel {
+    margin-right: 8px;
+    font-weight: 700;
+  }
+
+  &__timestamp {
+    color: $neutral-500;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+      @include breakpoint ('from-tablet') {
+        flex-direction: row;
+      }
+
+    & > * {
+      width: 100%;
+    }
+
+    & textarea {
+      @include type ('p', 'desktop');
+      padding: 16px;
+      background: $neutral-200;
+      margin-bottom: 24px;
+      border: 1px solid $neutral-500;
+      border-radius: $default-border-radius;
+
+      &:focus {
+        outline: none;
+        border: 2px solid $primary-color;
+      }
+    }
+
+    & textarea {
+      height: 96px;
+      resize: none;
+
+      @include breakpoint ('from-tablet') {
+        height: 48px;
+      }
+    }
+  }
+
+  &__submit-button {
+    @include breakpoint ('from-tablet') {
+      max-width: 160px;
     }
   }
 }
