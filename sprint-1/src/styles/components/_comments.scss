@@ -9,22 +9,6 @@
     margin-bottom: 32px;
   }
 
-  &__compose {
-    display: flex;
-    margin-bottom: 24px;
-
-    &-body {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &-heading {
-      color: $neutral-500;
-      text-transform: uppercase;
-    }
-  }
-
   &__user-avatar-wrapper {
     width: 54px;
     padding-right: 0;
@@ -92,12 +76,36 @@
     color: $neutral-500;
   }
 
+  &__compose {
+    display: flex;
+    margin-bottom: 24px;
+
+    &-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-heading {
+      padding-left: 54px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: $neutral-500;
+      text-transform: uppercase;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
 
       @include breakpoint ('from-tablet') {
         flex-direction: row;
+        padding-right: 40px;
+
+        & > *:not(:last-child) {
+          margin-right: 16px;
+        }
       }
 
     & > * {
@@ -105,25 +113,23 @@
     }
 
     & textarea {
-      @include type ('p', 'desktop');
+      height: 96px;
       padding: 16px;
       background: $neutral-200;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      resize: none;
+      @include type ('p', 'desktop');
       border: 1px solid $neutral-500;
       border-radius: $default-border-radius;
+
+      @include breakpoint ('from-tablet') {
+        line-height: 1;
+        height: 48px;
+      }
 
       &:focus {
         outline: none;
         border: 2px solid $primary-color;
-      }
-    }
-
-    & textarea {
-      height: 96px;
-      resize: none;
-
-      @include breakpoint ('from-tablet') {
-        height: 48px;
       }
     }
   }

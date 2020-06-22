@@ -25,20 +25,22 @@ class Comment extends Component {
 class CommentCompose extends Component {
   render() {
     return (
-      <div className="comments__compose">
-        <div className="comments__user-avatar-wrapper">
+      <div className="comment__compose-wrapper">
+        <h5 className="comment__compose-heading">Join the conversation</h5>
+        <div className="comment__compose">
+          <div className="comments__user-avatar-wrapper">
           <img className="comments__user-avatar" src={logo} alt="user avatar" />
-        </div>
-        <div className="comments__compose-body">
-          <h5 className="comments__compose-heading">Join the conversation</h5>
+          </div>
+          <div className="comment__compose-body">
             <form class="comment__form" action="" id="form">
-              <textarea id="commentContent"
-                        name="comment-content"
-                        placeholder="Add a comment"></textarea>
-              <button type="submit"
-                      id="submitBtn"
-                      class="cta comment__submit-button">Comment</button>
+            <textarea id="commentContent"
+              name="comment-content"
+            placeholder="Add a comment"></textarea>
+            <button type="submit"
+              id="submitBtn"
+            class="cta comment__submit-button">Comment</button>
             </form>
+          </div>
         </div>
       </div>
     )

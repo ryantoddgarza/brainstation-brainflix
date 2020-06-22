@@ -2,14 +2,15 @@
   height: 48px;
   padding: 1rem;
   color: $white;
-  @include type ('p', 'phone', 600);
+  font-size: 13px;
+  font-weight: 600;
   text-transform: uppercase;
   background: $primary-color;
   border: none;
   border-radius: $default-border-radius;
 
   @include breakpoint ('from-tablet') {
-    @include type ('p', 'desktop');
+    font-size: 14px;
   }
 
   &:hover {
