@@ -5,7 +5,7 @@ import IconLikes from './atoms/IconLikes';
 
 const Info = () => {
   return (
-    <div class="info__wrapper">
+    <div className="info__wrapper">
       <div className="info__title">{ JSON.metadata[0].title }</div>
       <div className="info__meta">
         <div className="info__meta-start">

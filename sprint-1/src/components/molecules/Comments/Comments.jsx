@@ -32,13 +32,15 @@ class CommentCompose extends Component {
           <img className="comments__user-avatar" src={logo} alt="user avatar" />
           </div>
           <div className="comment__compose-body">
-            <form class="comment__form" action="" id="form">
+            <form className="comment__form"
+                  action=""
+                  id="form">
             <textarea id="commentContent"
-              name="comment-content"
-            placeholder="Add a comment"></textarea>
+                      name="comment-content"
+                      placeholder="Add a comment"></textarea>
             <button type="submit"
-              id="submitBtn"
-            class="cta comment__submit-button">Comment</button>
+                    id="submitBtn"
+                    className="cta comment__submit-button">Comment</button>
             </form>
           </div>
         </div>
@@ -64,7 +66,7 @@ const CommentList = () => {
 
 const Comments = () => {
   return (
-    <div class="comments__wrapper">
+    <div className="comments__wrapper">
       <div className="comments__counter">3 Comments</div>
       <CommentCompose />
       <div className="divider"></div>

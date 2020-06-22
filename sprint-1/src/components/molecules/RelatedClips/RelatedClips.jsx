@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import JSON from './data';
-
+import axios from 'axios';
 
 class Clip extends Component {
   render() {
@@ -21,20 +21,32 @@ class Clip extends Component {
   }
 }
 
-const RelatedClips = () => {
-  const arr = JSON.related;
+class RelatedClips extends Component {
+  fetchData() {
+    axios.get(process.env.PUBLIC_URL + '/data.json')
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  }
 
-  return (
-    <div>
-      {arr.map((item, i) => {
-        return (
-          <Clip title={ arr[i].title }
-                channel={ arr[i].channel }
-                image={ arr[i].image } />
-        )
-      })}
-    </div>
-  )
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  render() {
+    const arr = JSON.related;
+
+    return (
+      <div>
+        {arr.map((item, i) => {
+          return (
+            <Clip title={ arr[i].title }
+                  channel={ arr[i].channel }
+                  image={ arr[i].image } />
+          )
+        })}
+      </div>
+    )
+  }
 }
 
 export default RelatedClips;
