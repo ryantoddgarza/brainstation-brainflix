@@ -8,6 +8,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  color: $color-text;
+}
+
 ul,
 li {
   list-style: none;

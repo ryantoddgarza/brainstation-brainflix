@@ -13,9 +13,14 @@
   }
 
   &__secondary {
-    flex: 1;
+    padding-top: 40px;
+
+    @include breakpoint ('desktop') {
+      width: 33.3333%;
+    }
 
     &-title {
+      margin-bottom: 40px;
       @include type ('h5', 'phone');
       color: $neutral-500;
       text-transform: uppercase;

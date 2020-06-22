@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home">
       <Player />
-      <main className="home__main-content">
+      <main className="container home__main-content">
         <div className="home__primary">
           primary
         </div>

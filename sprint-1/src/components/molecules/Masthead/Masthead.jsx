@@ -12,7 +12,7 @@ const Masthead = () => {
       <div className="masthead__end">
         <SearchInput />
         <div className="masthead__user-panel">
-          <button class="masthead__upload-btn cta">Upload</button>
+          <button className="masthead__upload-btn cta">Upload</button>
           <div className="masthead__user-avatar-wrapper">
             <img className="masthead__user-avatar" src="" alt="" />
           </div>
