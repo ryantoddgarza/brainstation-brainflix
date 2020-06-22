@@ -13,7 +13,7 @@ class Clip extends Component {
           </div>
           <div className="related__card-info">
           <div className="related__card-title">{ this.props.title }</div>
-          <div className="related__card-user">{ this.props.user }</div>
+          <div className="related__card-channel">{ this.props.channel }</div>
           </div>
         </div>
       </div>
@@ -26,10 +26,10 @@ const RelatedClips = () => {
 
   return (
     <div>
-      {arr.map((name, i) => {
+      {arr.map((item, i) => {
         return (
-          <Clip title={ arr[i].title}
-                user={ arr[i].user }
+          <Clip title={ arr[i].title }
+                channel={ arr[i].channel }
                 image={ arr[i].image } />
         )
       }

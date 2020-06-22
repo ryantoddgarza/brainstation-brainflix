@@ -14,7 +14,8 @@ class Player extends Component {
       <div className="player__area-wrapper">
         <div className="player__area">
           <div className="player__container">
-            <Video src={ this.state.source } />
+            <Video src={ this.state.source }
+                   poster={ process.env.PUBLIC_URL + `/images/video-list-0.jpg` }/>
             <Controls />
           </div>
         </div>

@@ -1,6 +1,6 @@
 .home {
   &__main-content {
-    display: flex;
+    @include row;
     flex-direction: column;
 
     @include breakpoint ('desktop') {
@@ -10,9 +10,11 @@
 
   &__primary {
     flex: 1;
+    @include col;
   }
 
   &__secondary {
+    @include col;
     padding-top: 40px;
 
     @include breakpoint ('desktop') {

@@ -36,7 +36,7 @@
     }
 
     & > *:not(:last-child) {
-      margin-right: 1rem;
+      margin-right: 16px;
     }
   }
 
@@ -44,8 +44,12 @@
     display: flex;
     margin-bottom: 1rem;
 
+    @include breakpoint ('from-tablet') {
+      margin-bottom: unset;
+    }
+
     & > *:not(:last-child) {
-      margin-right: 1rem;
+      margin-right: 16px;
     }
   }
 
@@ -56,6 +60,10 @@
     margin-bottom: 0.5rem;
     border: 1px solid $neutral-300;
     border-radius: $default-border-radius;
+
+    @include breakpoint ('from-tablet') {
+      margin-bottom: unset;
+    }
   }
 
   &__upload-btn {
