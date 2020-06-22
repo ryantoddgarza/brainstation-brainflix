@@ -1,0 +1,29 @@
+.comments {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__counter {
+    font-weight: 700;
+    margin-bottom: 32px;
+  }
+
+  &__compose {
+    @include row;
+    margin-bottom: 24px;
+  }
+
+  &__user-avatar-wrapper {
+    padding-right: 0;
+
+    & > img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: $neutral-500;
+      object-fit: cover;
+      object-position: 0 50%;
+    }
+  }
+}

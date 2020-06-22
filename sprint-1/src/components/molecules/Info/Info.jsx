@@ -1,5 +1,5 @@
 import React from 'react';
-import JSON from './info';
+import JSON from './infoData';
 import IconViews from './atoms/IconViews';
 import IconLikes from './atoms/IconLikes';
 

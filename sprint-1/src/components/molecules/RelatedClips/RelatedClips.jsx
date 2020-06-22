@@ -32,8 +32,7 @@ const RelatedClips = () => {
                 channel={ arr[i].channel }
                 image={ arr[i].image } />
         )
-      }
-      )}
+      })}
     </div>
   )
 }
