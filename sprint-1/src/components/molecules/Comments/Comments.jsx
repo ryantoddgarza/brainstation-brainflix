@@ -55,9 +55,10 @@ const CommentList = () => {
     <section className="comment__list">
       {path.map((item, i) => {
         return (
-          <Comment channel={ path[i].channel }
-              timestamp={ path[i].timestamp }
-              content={ path[i].comment } />
+          <Comment key={i}
+                   channel={ path[i].channel }
+                   timestamp={ path[i].timestamp }
+                   content={ path[i].comment } />
         )
       })}
     </section>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import JSON from './data';
 import axios from 'axios';
 
 class Clip extends Component {
@@ -22,9 +21,17 @@ class Clip extends Component {
 }
 
 class RelatedClips extends Component {
-  fetchData() {
+  state = {
+    related: []
+  }
+
+  fetchData = () => {
     axios.get(process.env.PUBLIC_URL + '/data.json')
-      .then(res => console.log(res))
+      .then(res => {
+        this.setState({
+          related: res.data.related
+        });
+      })
       .catch(err => console.log(err));
   }
 
@@ -33,19 +40,26 @@ class RelatedClips extends Component {
   }
 
   render() {
-    const arr = JSON.related;
+    const arr = this.state.related;
 
-    return (
-      <div>
-        {arr.map((item, i) => {
-          return (
-            <Clip title={ arr[i].title }
-                  channel={ arr[i].channel }
-                  image={ arr[i].image } />
-          )
-        })}
-      </div>
-    )
+    if (this.state.related.length === 0) {
+      return (
+        <div>Loading..</div>
+      )
+    } else {
+      return (
+        <div>
+          {arr.map((item, i) => {
+            return (
+              <Clip key={i}
+                    title={ arr[i].title }
+                    channel={ arr[i].channel }
+                    image={ arr[i].image } />
+            )
+          })}
+        </div>
+      )
+    }
   }
 }
 
