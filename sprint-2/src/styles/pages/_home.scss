@@ -1,0 +1,35 @@
+.home {
+  &__main-content {
+    @include row;
+    flex-direction: column;
+
+    @include breakpoint ('desktop') {
+      flex-direction: row;
+    }
+  }
+
+  &__primary {
+    flex: 1;
+    @include col;
+  }
+
+  &__secondary {
+    @include col;
+    padding-top: 40px;
+
+    @include breakpoint ('desktop') {
+      width: 33.3333%;
+    }
+
+    &-title {
+      margin-bottom: 40px;
+      @include type ('h5', 'phone');
+      color: $neutral-500;
+      text-transform: uppercase;
+
+      @include breakpoint ('from-tablet') {
+        @include type ('h5', 'desktop');
+      }
+    }
+  }
+}
