@@ -8,6 +8,7 @@
   background: $primary-color;
   border: none;
   border-radius: $default-border-radius;
+  cursor: pointer;
 
   @include breakpoint ('from-tablet') {
     font-size: 14px;

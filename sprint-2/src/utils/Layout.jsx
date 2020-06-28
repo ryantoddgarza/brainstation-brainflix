@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Masthead from '../components/molecules/Masthead/Masthead';
-import Home from '../components/scenes/Home/Home';
 
 class Layout extends Component {
   render() {
@@ -8,7 +7,7 @@ class Layout extends Component {
       <div id="wrap">
         <Masthead />
         <main id="main">
-          <Home />
+          { this.props.children }
         </main>
       </div>
     )

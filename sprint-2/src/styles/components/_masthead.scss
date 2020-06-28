@@ -19,6 +19,10 @@
     @include breakpoint ('from-tablet') {
       flex: 1;
     }
+
+    & > a {
+      display: inline-flex;
+    }
   }
 
   &__end {
@@ -51,17 +55,17 @@
     & > *:not(:last-child) {
       margin-right: 16px;
     }
+
+    & > a {
+      display: inline-block;
+      flex-grow: 1;
+    }
   }
 
   &__search-field {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 48px;
-    padding: 0 16px;
-    margin-bottom: 0.5rem;
-    border: 1px solid $neutral-300;
-    border-radius: $default-border-radius;
+    margin-bottom: 8px;
 
     @include breakpoint ('from-tablet') {
       margin-bottom: unset;
@@ -82,9 +86,9 @@
   }
 
   &__upload-btn {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
+    width: 100%;
 
     & > svg {
       margin-right: 16px;

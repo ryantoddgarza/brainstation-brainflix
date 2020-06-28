@@ -97,24 +97,13 @@
       width: 100%;
     }
 
-    & textarea {
+    & .textarea {
       height: 96px;
-      padding: 16px;
-      background: $neutral-200;
       margin-bottom: 16px;
-      resize: none;
-      @include type ('p', 'desktop');
-      border: 1px solid $neutral-500;
-      border-radius: $default-border-radius;
 
       @include breakpoint ('from-tablet') {
         line-height: 1;
         height: 48px;
-      }
-
-      &:focus {
-        outline: none;
-        border: 2px solid $primary-color;
       }
     }
   }

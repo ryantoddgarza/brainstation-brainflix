@@ -38,6 +38,7 @@ const CommentCompose = () => {
                 action=""
                 id="form">
           <textarea id="commentContent"
+                    className="textarea"
                     name="comment-content"
                     placeholder="Add a comment"></textarea>
           <button type="submit"
