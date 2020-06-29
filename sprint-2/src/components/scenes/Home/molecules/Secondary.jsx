@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import RelatedClipList from '../../../molecules/RelatedClips/RelatedClips';
+import React from 'react';
+import RelatedClips from '../../../molecules/RelatedClips/RelatedClips';
 
-class Secondary extends Component {
-  render() {
-    return (
-      <RelatedClipList />
-    )
-  }
+const Secondary = (props) => {
+  return (
+    <RelatedClips data={ props.data } />
+  )
 }
 
 export default Secondary;
+

@@ -1,56 +1,39 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import IconViews from './atoms/IconViews';
 import IconLikes from './atoms/IconLikes';
 
 class Info extends Component {
-  state = {
-    metadata: []
-  }
-
-  fetchData = () => {
-    axios.get(process.env.PUBLIC_URL + '/data.json')
-      .then(res => {
-        this.setState({
-          metadata: res.data.metadata
-        });
-      })
-      .catch(err => console.log(err));
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
   render() {
-    const metadata = this.state.metadata;
+    const data = this.props.data;
 
-    if (this.state.metadata.length === 0) {
+    if (!data.active) {
       return (
         <div className="info__wrapper">Loading...</div>
       )
     } else {
       return (
         <div className="info__wrapper">
-          <div className="info__title">{ metadata[0].title }</div>
+          <div className="info__title">{ data.active.title }</div>
           <div className="info__meta">
             <div className="info__meta-start">
-              <div className="info__channel">By { metadata[0].channel }</div>
-              <div className="info__timestamp">{ metadata[0].timestamp }</div>
+              <div className="info__channel">By { data.active.channel }</div>
+              <div className="info__timestamp">
+                { new Date(data.active.timestamp).toLocaleDateString('en-US') }
+              </div>
             </div>
             <div className="info__meta-end">
               <div className="info__views_">
                 <IconViews />
-                { metadata[0].views }
+                { data.active.views }
               </div>
               <div className="info__likes">
                 <IconLikes />
-                { metadata[0].likes }
+                { data.active.likes }
               </div>
             </div>
           </div>
           <div className="divider"></div>
-          <div className="info__description">{ metadata[0].description }</div>
+          <div className="info__description">{ data.active.description }</div>
         </div>
       )
     }
