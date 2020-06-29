@@ -1,17 +1,18 @@
 import React from 'react';
 import Comment from '../atoms/Comment';
-import JSON from './commentsData';
 
-const CommentList = () => {
-  const path = JSON.metadata[0].comments.content;
+const CommentList = (props) => {
+  const data = props.data.active.comments;
+
   return (
     <section className="comment__list">
-      {path.map((item, i) => {
+      {data.map((item, i) => {
         return (
           <Comment key={i}
-                   channel={ path[i].channel }
-                   timestamp={ path[i].timestamp }
-                   content={ path[i].comment } />
+                   channel={ data[i].name }
+                   timestamp={ new Date(data[i].timestamp).toLocaleDateString('en-US') }
+                   content={ data[i].comment }
+          />
         )
       })}
     </section>

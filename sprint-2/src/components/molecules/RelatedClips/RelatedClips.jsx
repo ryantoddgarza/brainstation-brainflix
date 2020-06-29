@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Clip from './molecules/Clip';
 
 const RelatedClips = (props) => {
@@ -13,10 +14,14 @@ const RelatedClips = (props) => {
       <div>
         {arr.map((item, i) => {
           return (
-            <Clip key={i}
-                  title={ arr[i].title }
-                  channel={ arr[i].channel }
-                  image={ arr[i].image } />
+            <Link key={ arr[i].id }
+                  to={'/' + arr[i].id}>
+              <Clip data={ props.data }
+                    title={ arr[i].title }
+                    channel={ arr[i].channel }
+                    image={ arr[i].image }
+              />
+            </Link>
           )
         })}
       </div>

@@ -15,7 +15,7 @@ const Comments = (props) => {
         <div className="comments__counter">{ data.active.comments.length } Comments</div>
         <CommentCompose />
         <div className="divider"></div>
-        <CommentList />
+        <CommentList data={ data } />
       </div>
     )
   }
