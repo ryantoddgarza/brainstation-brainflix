@@ -1,0 +1,108 @@
+.masthead {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+
+    @include breakpoint ('from-tablet') {
+      flex-direction: row;
+    }
+  }
+
+  &__start {
+    display: flex;
+    height: 48px;
+
+    @include breakpoint ('from-tablet') {
+      flex: 1;
+    }
+
+    & > a {
+      display: inline-flex;
+    }
+  }
+
+  &__end {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include breakpoint ('from-tablet') {
+      flex-direction: row;
+      width: 66.6666%;
+    }
+
+    @include breakpoint ('desktop') {
+      width: 41.6666%;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__user-panel {
+    display: flex;
+    margin-bottom: 1rem;
+
+    @include breakpoint ('from-tablet') {
+      margin-bottom: unset;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    & > a {
+      display: inline-block;
+      flex-grow: 1;
+    }
+  }
+
+  &__search-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    @include breakpoint ('from-tablet') {
+      margin-bottom: unset;
+    }
+  }
+
+  &__search-input {
+    flex: 1;
+    width: 0;
+    height: 100%;
+    margin: 0 8px;
+    background: transparent;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__upload-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    & > svg {
+      margin-right: 16px;
+    }
+  }
+
+  &__user-avatar-wrapper {
+    width: 48px;
+    height: 48px;
+    background: $neutral-300;
+    border-radius: 50%;
+
+    & > img {
+      object-position: 0 50%;
+    }
+  }
+}

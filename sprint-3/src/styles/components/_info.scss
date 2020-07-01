@@ -1,0 +1,78 @@
+.info {
+  &__wrapper {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @include breakpoint ('from-tablet') {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  }
+
+  &__title {
+    @include type ('h1', 'phone', 700);
+    margin-bottom: 16px;
+
+    @include breakpoint ('from-tablet') {
+      @include type ('h1', 'desktop');
+      margin-bottom: 24px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.875rem;
+
+    @include breakpoint ('from-tablet') {
+      flex-direction: row;
+    }
+
+    &-start {
+      margin-bottom: 24px;
+
+      & > * {
+        display: inline;
+      }
+    }
+
+    &-end {
+      margin-bottom: 24px;
+
+      & > * {
+        display: inline;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+    }
+
+    & svg {
+      vertical-align: bottom;
+      margin-right: 8px;
+    }
+  }
+
+  &__channel {
+    margin-right: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__timestamp {
+    color: $neutral-500;
+  }
+
+  &__description {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    @include type ('p', 'phone');
+
+    @include breakpoint ('from-tablet') {
+      @include type ('p', 'desktop');
+    }
+  }
+}
+

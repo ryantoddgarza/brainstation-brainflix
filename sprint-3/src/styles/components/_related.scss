@@ -1,0 +1,55 @@
+.related {
+  &__wrapper {
+    @include breakpoint ('from-tablet') {
+      width: 50%;
+    }
+
+    @include breakpoint ('desktop') {
+      width: unset;
+    }
+  }
+
+  &__card {
+    display: flex;
+    margin-bottom: 24px;
+    @include type ('p', 'phone');
+
+    @include breakpoint ('from-tablet') {
+      @include type ('p', 'desktop');
+    }
+
+    &-image-wrapper {
+      width: 120px;
+      height: 67.5px;
+      margin-right: 16px;
+      overflow: hidden;
+      border-radius: $default-border-radius;
+
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+    }
+
+    &-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    &-user {
+    }
+  }
+}
