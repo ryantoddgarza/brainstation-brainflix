@@ -6,15 +6,15 @@ import Home from './components/scenes/Home/Home';
 import Upload from './components/scenes/Upload/Upload';
 
 const App = (props) => {
-    return (
-      <Layout>
-        <Switch>
-          <Route path="/" exact component={ Home }/>
-          <Route path="/upload" component={ Upload } />
-          <Route path="/:videoId" component={ Home }/>
-        </Switch>
-      </Layout>
-    )
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" exact component={ Home }/>
+        <Route path="/upload" component={ Upload } />
+        <Route path="/:videoId" component={ Home }/>
+      </Switch>
+    </Layout>
+  )
 }
 
 export default App;
