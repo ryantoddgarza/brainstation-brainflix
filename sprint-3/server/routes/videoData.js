@@ -1,9 +1,25 @@
 const express = require('express');
 const router = express.Router();
-
-const videos = require('./videos')
+const uniqid = require('uniqid');
+const videos = require('./videos');
 
 router.get('/videos', (req, res) => {
+  res.json(videos);
+})
+
+router.post('/videos', (req, res) => {
+  const { title, image, description } = req.body;
+
+  videos.push(
+    {
+      "id": uniqid(),
+      title,
+      "channel": "Mohan Muruge",
+      image,
+      description
+    }
+  );
+
   res.json(videos);
 })
 

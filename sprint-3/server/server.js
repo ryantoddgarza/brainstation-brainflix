@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-
 const videoData = require('./routes/videoData');
 
+app.use(express.json())
+app.use(express.urlencoded());
 app.use(cors());
 
 app.use('/', videoData);
