@@ -117,5 +117,10 @@
       font-size: 14px;
     }
   }
+
+  &__error-message {
+    text-align: right;
+    color: red;
+  }
 }
 
