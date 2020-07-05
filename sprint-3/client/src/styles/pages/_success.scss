@@ -1,0 +1,16 @@
+.success {
+  padding-top: 40px;
+  text-align: center;
+
+  &__message {
+    @include type ('h2', 'phone')
+  }
+
+  a {
+    color: $primary-color;
+
+    &:hover {
+      color: $primary-color-hover;
+    }
+  }
+}
