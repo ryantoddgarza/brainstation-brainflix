@@ -12,11 +12,16 @@ router.post('/videos', (req, res) => {
 
   videos.push(
     {
-      "id": uniqid(),
+      id: uniqid(),
       title,
-      "channel": "Mohan Muruge",
+      channel: "Mohan Muruge",
       image,
-      description
+      description,
+      views: "0",
+      likes: "0",
+      duration: "4:12",
+      timestamp: new Date(),
+      comments: []
     }
   );
 
