@@ -1,18 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const data = require('./data')
+const videos = require('./videos')
 
 router.get('/videos', (req, res) => {
-  res.json(data);
+  res.json(videos);
 })
 
-router.get('/foo', (req, res) => {
-  res.send('foo');
-})
-
-router.get('/bar', (req, res) => {
-  res.send('bar');
+router.get('/videos/:id', (req, res) => {
+  const id = req.params.id;
+  videos.forEach((video) => {
+    if (video.id === id) {
+      res.json(video);
+      return;
+    }
+  });
 })
 
 module.exports = router;
