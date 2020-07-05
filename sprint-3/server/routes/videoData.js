@@ -1,18 +1,36 @@
 const express = require('express');
 const router = express.Router();
-
-const data = require('./data')
+const uniqid = require('uniqid');
+const videos = require('./videos');
 
 router.get('/videos', (req, res) => {
-  res.json(data);
+  res.json(videos);
 })
 
-router.get('/foo', (req, res) => {
-  res.send('foo');
+router.post('/videos', (req, res) => {
+  const { title, image, description } = req.body;
+
+  videos.push(
+    {
+      "id": uniqid(),
+      title,
+      "channel": "Mohan Muruge",
+      image,
+      description
+    }
+  );
+
+  res.json(videos);
 })
 
-router.get('/bar', (req, res) => {
-  res.send('bar');
+router.get('/videos/:id', (req, res) => {
+  const id = req.params.id;
+  videos.forEach((video) => {
+    if (video.id === id) {
+      res.json(video);
+      return;
+    }
+  });
 })
 
 module.exports = router;

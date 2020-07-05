@@ -11,29 +11,25 @@ class Home extends Component {
     videos: null
   }
 
-  // getLocalData() {
-  //   axios.get('http://localhost:8080/videos')
-  //     .then(res => console.log(res))
-  // }
-
   getAPI() {
-    const URL = 'https://project-2-api.herokuapp.com';
-    const API_KEY = '01099e44-3de9-4a9f-b99a-c0ec4dc92b65';
+    const URL = 'http://localhost:8080';
     let VIDEO_ID = this.props.match.params.videoId;
-    if (VIDEO_ID === undefined) {VIDEO_ID = '1af0jruup5gu';}
 
-    axios.get(`${URL}/videos?api_key=${API_KEY}`)
+    if (VIDEO_ID === undefined) {
+      VIDEO_ID = '1af0jruup5gu';
+    }
+
+    axios.get(`${URL}/videos`)
       .then((res) => this.setState({ videos: res.data }))
-      .catch((err) => console.error(err));
+      .catch(console.eror);
 
-    axios.get(`${URL}/videos/${VIDEO_ID}?api_key=${API_KEY}`)
+    axios.get(`${URL}/videos/${VIDEO_ID}`)
       .then((res) => this.setState({ active: res.data }))
-      .catch((err) => console.error(err));
+      .catch(console.error);
   }
 
   componentDidMount() {
     this.getAPI();
-    // this.getLocalData();
   }
 
   componentDidUpdate(prevProps, prevState) {
