@@ -9,8 +9,8 @@ const Layout = (props) => {
         { props.children }
       </main>
     </div>
-  )
-}
+  );
+};
 
 export default Layout;
 

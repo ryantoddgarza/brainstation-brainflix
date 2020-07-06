@@ -7,10 +7,10 @@ class Upload extends Component {
     super(props);
     this.state = {
       submitted: false,
-      errors: false
+      errors: false,
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +18,7 @@ class Upload extends Component {
     if (!e.target.title.value || !e.target.description.value) {
       this.setState({ errors: true });
       return;
-    }
+    };
 
     axios.post('/videos', {
       title: e.target.title.value,
@@ -27,21 +27,21 @@ class Upload extends Component {
     });
 
     this.setState({ submitted: true });
-  }
+  };
 
   render() {
     if (this.state.submitted) {
       return (
         <Success />
       );
-    }
+    };
 
     let errorMessage;
     if (this.state.errors) {
       errorMessage = <div className="upload__error-message">All fields are required</div>;
     } else {
       errorMessage = null;
-    }
+    };
 
     return (
       <div className="upload">
@@ -57,7 +57,7 @@ class Upload extends Component {
             </div>
             <form id="uploadForm"
                   className="upload__form"
-                  onSubmit={this.handleSubmit}>
+                  onSubmit={ this.handleSubmit }>
               <label className="upload__label" htmlFor="title">Title your video</label>
               <input id="title"
                      className="input upload__form-input"
@@ -72,17 +72,17 @@ class Upload extends Component {
               <div className="upload__form-controls">
                 <button className="cta upload__submit-button">Publish</button>
                 <div className="upload__cancel-button"
-                     onClick={() => this.props.history.push('/')}>Cancel
+                     onClick={ () => this.props.history.push('/') }>Cancel
                 </div>
               </div>
-              <div>{errorMessage}</div>
+              <div>{ errorMessage }</div>
             </form>
           </div>
         </main>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default Upload;
 

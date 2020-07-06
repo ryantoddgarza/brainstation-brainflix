@@ -21,7 +21,7 @@ router.post('/videos', (req, res) => {
       likes: "0",
       duration: "4:12",
       timestamp: new Date(),
-      comments: []
+      comments: [],
     }
   );
 
@@ -30,6 +30,7 @@ router.post('/videos', (req, res) => {
 
 router.get('/videos/:id', (req, res) => {
   const id = req.params.id;
+
   videos.forEach((video) => {
     if (video.id === id) {
       res.json(video);

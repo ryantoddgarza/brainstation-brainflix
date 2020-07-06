@@ -9,20 +9,21 @@ const Player = (props) => {
 
   if (!data.active) {
     return null;
-  }
+  };
 
   return (
     <div className="player__area-wrapper">
       <div className="player__area">
         <div className="player__container">
-          <Video src={video1}
-                 poster={data.active.image}
+          <Video src={ video1 }
+                 poster={ data.active.image }
           />
-          <Controls data={data} />
+          <Controls data={ data } />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
 export default Player;
 

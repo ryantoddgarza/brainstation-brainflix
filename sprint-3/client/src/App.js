@@ -14,8 +14,8 @@ const App = (props) => {
         <Route path="/:videoId" component={ Home }/>
       </Switch>
     </Layout>
-  )
-}
+  );
+};
 
 export default App;
 

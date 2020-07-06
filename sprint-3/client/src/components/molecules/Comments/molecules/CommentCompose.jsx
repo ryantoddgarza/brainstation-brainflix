@@ -10,10 +10,10 @@ const CommentCompose = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`/videos/${data.active.id}`, {
+    axios.post(`/videos/${ data.active.id }`, {
       comment: e.target.commentContent.value
     })
-  }
+  };
 
   return (
     <div className="comment__compose-wrapper">
@@ -27,7 +27,7 @@ const CommentCompose = (props) => {
         <div className="comment__compose-body">
           <form className="comment__form"
                 id="form"
-                onSubmit={handleSubmit}>
+                onSubmit={ handleSubmit }>
           <textarea id="commentContent"
                     className="textarea"
                     name="comment-content"
@@ -39,8 +39,8 @@ const CommentCompose = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CommentCompose;
 

@@ -5,10 +5,10 @@ const UploadButton = () => {
   return (
     <button className="masthead__upload-btn cta">
       <IconUpload />
-      Upload
+      <span>Upload</span>
     </button>
-  )
-}
+  );
+};
 
 export default UploadButton;
 

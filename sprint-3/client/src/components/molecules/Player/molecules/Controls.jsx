@@ -6,10 +6,10 @@ import IconFullscreen from '../atoms/IconFullscreen';
 import IconVolume from '../atoms/IconVolume';
 
 const dummyData = {
-    controls: {
-      status: false
-    }
-}
+  controls: {
+    status: false,
+  }
+};
 
 const Controls = (props) => {
   const data = props.data;
@@ -19,22 +19,22 @@ const Controls = (props) => {
     statusIcon = <IconPlay />
   } else {
     statusIcon = <IconPause />
-  }
+  };
 
   const updatePlayerVideo = () => {
     console.error('Easy there cowboy. This feature is not functional yet.')
-  }
+  };
 
   return (
     <div className="player__controls-wrapper">
       <div className="player__controls">
         <button className="player__controls--left"
-                onClick={updatePlayerVideo}>{statusIcon}
+                onClick={ updatePlayerVideo }>{ statusIcon }
         </button>
         <div className="player__progress">
           <div className="player__progress--scrubber"></div>
           <div className="player__controls--time-display">
-            0:00 / {data.active.duration}
+            0:00 / { data.active.duration }
           </div>
         </div>
         <div className="player__controls--right">
@@ -43,8 +43,8 @@ const Controls = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Controls;
 

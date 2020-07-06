@@ -13,8 +13,8 @@ const Clip = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Clip;
 
