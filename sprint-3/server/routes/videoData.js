@@ -38,5 +38,30 @@ router.get('/videos/:id', (req, res) => {
   });
 })
 
+router.post('/videos/:id', (req, res) => {
+  const id = req.params.id;
+  const { comment } = req.body;
+
+  let currentVideo;
+  videos.forEach((video) => {
+    if (video.id === id) {
+      currentVideo = video;
+      return;
+    }
+  });
+
+  currentVideo.comments.push(
+    {
+      name: "Mohan Muruge",
+      comment,
+      id: uniqid(),
+      likes: "0",
+      timestamp: Date.now(),
+    }
+  );
+
+  res.json(currentVideo.comments)
+})
+
 module.exports = router;
 

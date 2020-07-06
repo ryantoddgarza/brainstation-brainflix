@@ -12,7 +12,7 @@ const Comments = (props) => {
   return (
     <div className="comments__wrapper">
       <div className="comments__counter">{ data.active.comments.length } Comments</div>
-      <CommentCompose />
+      <CommentCompose data={ data }/>
       <div className="divider"></div>
       <CommentList data={ data } />
     </div>
