@@ -40,6 +40,10 @@
     &-end {
       margin-bottom: 24px;
 
+      @include breakpoint ('desktop') {
+        margin-right: 32px;
+      }
+
       & > * {
         display: inline;
 
