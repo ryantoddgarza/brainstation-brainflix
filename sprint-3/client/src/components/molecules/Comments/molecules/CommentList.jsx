@@ -52,7 +52,7 @@ const CommentList = (props) => {
                    content={ data[i].comment }
           />
         );
-      })};
+      })}
     </section>
   );
 };

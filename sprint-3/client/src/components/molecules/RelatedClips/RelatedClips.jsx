@@ -23,7 +23,7 @@ const RelatedClips = (props) => {
             />
           </Link>
         );
-      })};
+      })}
     </div>
   );
 };
