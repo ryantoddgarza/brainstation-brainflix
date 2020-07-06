@@ -8,25 +8,25 @@ const RelatedClips = (props) => {
 
   if (!videoArr) {
     return null;
-  }
+  };
 
   return (
     <div>
       {filtered.map((item, i) => {
         return (
           <Link key={ filtered[i].id }
-                to={'/' + filtered[i].id}>
+                to={ '/' + filtered[i].id }>
             <Clip data={ props.data }
                   title={ filtered[i].title }
                   channel={ filtered[i].channel }
                   image={ filtered[i].image }
             />
           </Link>
-        )
-      })}
+        );
+      })};
     </div>
-  )
-}
+  );
+};
 
 export default RelatedClips;
 

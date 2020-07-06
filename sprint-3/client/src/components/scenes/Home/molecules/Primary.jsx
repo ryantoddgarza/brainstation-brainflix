@@ -1,6 +1,6 @@
 import React from 'react';
-import Info from '../../../molecules/Info/Info'
-import Comments from '../../../molecules/Comments/Comments'
+import Info from '../../../molecules/Info/Info';
+import Comments from '../../../molecules/Comments/Comments';
 
 const Primary = (props) => {
   return (
@@ -8,8 +8,8 @@ const Primary = (props) => {
       <Info data={ props.data } />
       <Comments data={ props.data } />
     </div>
-  )
-}
+  );
+};
 
 export default Primary;
 

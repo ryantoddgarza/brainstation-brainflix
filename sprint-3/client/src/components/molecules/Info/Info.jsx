@@ -7,7 +7,7 @@ const Info = (props) => {
 
   if (!data.active) {
     return null;
-  }
+  };
 
   return (
     <div className="info__wrapper">
@@ -33,8 +33,8 @@ const Info = (props) => {
       <div className="divider"></div>
       <div className="info__description">{ data.active.description }</div>
     </div>
-  )
-}
+  );
+};
 
 export default Info;
 

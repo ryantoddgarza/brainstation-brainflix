@@ -11,7 +11,7 @@ const Success = () => {
     </main>
     </div>
   );
-}
+};
 
 export default Success;
 

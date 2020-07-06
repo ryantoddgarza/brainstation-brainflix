@@ -7,8 +7,8 @@ const Video = (props) => {
       <video src={ props.src } poster={ props.poster }></video>
     </div>
     </div>
-  )
-}
+  );
+};
 
 export default Video;
 

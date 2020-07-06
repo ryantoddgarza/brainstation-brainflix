@@ -18,8 +18,8 @@ const Comment = (props) => {
         <div className="divider"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Comment;
 

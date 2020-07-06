@@ -7,7 +7,7 @@ const Comments = (props) => {
 
   if (!data.active) {
     return null;
-  }
+  };
 
   return (
     <div className="comments__wrapper">
@@ -16,8 +16,8 @@ const Comments = (props) => {
       <div className="divider"></div>
       <CommentList data={ data } />
     </div>
-  )
-}
+  );
+};
 
 export default Comments;
 

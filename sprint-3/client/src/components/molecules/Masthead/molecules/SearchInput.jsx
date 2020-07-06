@@ -9,8 +9,8 @@ const SearchInput = () => {
         type="search"
         placeholder="Search" />
     </div>
-  )
-}
+  );
+};
 
 export default SearchInput;
 
