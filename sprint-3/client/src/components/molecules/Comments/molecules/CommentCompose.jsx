@@ -1,6 +1,12 @@
 import React from 'react';
+import axios from 'axios';
+
 import UserAvatar from '../../../atoms/UserAvatar';
 import usrImg from '../../../../assets/images/Mohan-muruge.jpg';
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+}
 
 const CommentCompose = () => {
   return (
@@ -14,8 +20,8 @@ const CommentCompose = () => {
         </div>
         <div className="comment__compose-body">
           <form className="comment__form"
-                action=""
-                id="form">
+                id="form"
+                onSubmit={handleSubmit}>
           <textarea id="commentContent"
                     className="textarea"
                     name="comment-content"
