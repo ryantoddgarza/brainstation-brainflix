@@ -8,15 +8,13 @@ import IconVolume from '../atoms/IconVolume';
 const dummyData = {
     controls: {
       status: false
-    },
-    metadata: {
-      length: '0:20',
-      pos: '0:00'
     }
 }
 
-const Controls = () => {
-  let statusIcon = undefined;
+const Controls = (props) => {
+  const data = props.data;
+
+  let statusIcon;
   if (dummyData.controls.status === false) {
     statusIcon = <IconPlay />
   } else {
@@ -31,13 +29,12 @@ const Controls = () => {
     <div className="player__controls-wrapper">
       <div className="player__controls">
         <button className="player__controls--left"
-                onClick={updatePlayerVideo}>
-          {statusIcon}
+                onClick={updatePlayerVideo}>{statusIcon}
         </button>
         <div className="player__progress">
           <div className="player__progress--scrubber"></div>
           <div className="player__controls--time-display">
-            {dummyData.metadata.pos} / {dummyData.metadata.length}
+            0:00 / {data.active.duration}
           </div>
         </div>
         <div className="player__controls--right">

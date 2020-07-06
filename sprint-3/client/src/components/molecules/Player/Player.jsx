@@ -18,7 +18,7 @@ const Player = (props) => {
           <Video src={video1}
                  poster={data.active.image}
           />
-          <Controls />
+          <Controls data={data} />
         </div>
       </div>
     </div>
